@@ -8,7 +8,7 @@ from datetime import date
 from pathlib import Path
 
 
-SCRIPT = Path(__file__).resolve().parents[1] / "skill" / "track-legal-frontiers" / "scripts" / "collect_candidates.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "skill" / "legal-paper-frontier" / "scripts" / "collect_candidates.py"
 SPEC = importlib.util.spec_from_file_location("collect_candidates", SCRIPT)
 collector = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None

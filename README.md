@@ -1,6 +1,6 @@
-# LexFrontier
+# legal-paper-frontier
 
-An on-demand, public archive of carefully selected frontier legal scholarship. LexFrontier searches recent Chinese and English work, prioritizes AI-law and genuinely interdisciplinary research, explains it in plain Chinese, and archives each digest to GitHub.
+An on-demand, public archive of carefully selected frontier legal scholarship. legal-paper-frontier searches recent Chinese and English work, prioritizes AI-law and genuinely interdisciplinary research, explains it in plain Chinese, and archives each digest to GitHub.
 
 [中文说明](README.zh-CN.md)
 
@@ -21,9 +21,9 @@ Citation counts, download counts, social popularity, and personal preference his
 ```text
 data/seen.json                              Permanent recommendation registry
 reports/YYYY/MM/YYYY-MM-DD[-NN].md          Public digest archive
-skill/track-legal-frontiers/SKILL.md        Agent-neutral workflow
-skill/track-legal-frontiers/references/     Source, selection, and report contracts
-skill/track-legal-frontiers/scripts/        Discovery and archive utilities
+skill/legal-paper-frontier/SKILL.md         Agent-neutral workflow
+skill/legal-paper-frontier/references/      Source, selection, and report contracts
+skill/legal-paper-frontier/scripts/         Discovery and archive utilities
 tests/                                      Standard-library test suite
 ```
 
@@ -32,27 +32,27 @@ tests/                                      Standard-library test suite
 Clone this repository, then expose the nested skill folder to your agent. For Codex on Windows PowerShell:
 
 ```powershell
-git clone https://github.com/XIaoyu7879/lex-frontier.git
-Set-Location lex-frontier
+git clone https://github.com/XIaoyu7879/legal-paper-frontier.git
+Set-Location legal-paper-frontier
 New-Item -ItemType Junction `
-  -Path "$env:USERPROFILE\.codex\skills\track-legal-frontiers" `
-  -Target "$PWD\skill\track-legal-frontiers"
+  -Path "$env:USERPROFILE\.codex\skills\legal-paper-frontier" `
+  -Target "$PWD\skill\legal-paper-frontier"
 ```
 
 On macOS or Linux:
 
 ```bash
-git clone https://github.com/XIaoyu7879/lex-frontier.git
-cd lex-frontier
-ln -s "$(pwd)/skill/track-legal-frontiers" ~/.codex/skills/track-legal-frontiers
+git clone https://github.com/XIaoyu7879/legal-paper-frontier.git
+cd legal-paper-frontier
+ln -s "$(pwd)/skill/legal-paper-frontier" ~/.codex/skills/legal-paper-frontier
 ```
 
-Other agents that support the open `SKILL.md` convention can load `skill/track-legal-frontiers/SKILL.md` directly.
+Other agents that support the open `SKILL.md` convention can load `skill/legal-paper-frontier/SKILL.md` directly.
 
 Invoke it with a prompt such as:
 
 ```text
-Use $track-legal-frontiers to curate and archive today's legal-frontier digest.
+Use $legal-paper-frontier to curate and archive today's legal-frontier digest.
 ```
 
 The Skill is intentionally on-demand; it does not install a scheduler. Git must already be authenticated for automatic push.
@@ -63,18 +63,18 @@ Python 3.10+ is sufficient; there are no third-party runtime dependencies.
 
 ```powershell
 # Candidate discovery only—final selection still requires live verification and reading.
-py skill/track-legal-frontiers/scripts/collect_candidates.py `
+py skill/legal-paper-frontier/scripts/collect_candidates.py `
   --repo-root . --days 14 --output tmp/candidates.json
 
 # Validate, render, deduplicate, commit, and push a completed JSON draft.
-py skill/track-legal-frontiers/scripts/archive_report.py `
+py skill/legal-paper-frontier/scripts/archive_report.py `
   tmp/digest.json --repo-root . --push
 
 # Test locally.
 py -m unittest discover -s tests -v
 ```
 
-The optional `OPENALEX_API_KEY` raises OpenAlex API capacity. `LEXFRONTIER_MAILTO` adds a contact address to the Crossref user agent.
+The optional `OPENALEX_API_KEY` raises OpenAlex API capacity. `LEGAL_PAPER_FRONTIER_MAILTO` adds a contact address to the Crossref user agent.
 
 ## Quality and access
 

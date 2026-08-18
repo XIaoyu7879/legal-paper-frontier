@@ -19,7 +19,7 @@ from urllib.parse import quote, urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
 
 
-USER_AGENT = "LexFrontier/1.0 (public research discovery tool)"
+USER_AGENT = "legal-paper-frontier/1.0 (public research discovery tool)"
 TOPIC_TERMS = (
     "artificial intelligence",
     "generative ai",
@@ -97,7 +97,7 @@ def candidate_keys(candidate: dict[str, Any]) -> list[str]:
 
 
 def request_json(url: str, timeout: int = 25, retries: int = 1) -> dict[str, Any]:
-    mailto = os.environ.get("LEXFRONTIER_MAILTO", "").strip()
+    mailto = os.environ.get("LEGAL_PAPER_FRONTIER_MAILTO", "").strip()
     user_agent = USER_AGENT + (f"; mailto:{mailto}" if mailto else "")
     request = Request(url, headers={"Accept": "application/json", "User-Agent": user_agent})
     for attempt in range(retries + 1):

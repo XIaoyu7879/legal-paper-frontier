@@ -1,9 +1,9 @@
 ---
-name: track-legal-frontiers
-description: Curate an on-demand Chinese legal-frontier digest from recent Chinese and English scholarship, prioritizing AI-law and interdisciplinary work, then archive and push it to GitHub. Use when the user asks for today's or the latest legal papers, a legal research frontier briefing, or an update to the LexFrontier archive.
+name: legal-paper-frontier
+description: Curate an on-demand Chinese legal-frontier digest from recent Chinese and English scholarship, prioritizing AI-law and interdisciplinary work, then archive and push it to GitHub. Use when the user asks for today's or the latest legal papers, a legal research frontier briefing, or an update to the legal-paper-frontier archive.
 ---
 
-# Track Legal Frontiers
+# Legal Paper Frontier
 
 Produce a selective, readable legal-research digest. Default to 2-5 recommendations, one deep read, a 1-2 week search window, and a 10-minute total reading time. Prefer no recommendation over a weak one.
 
@@ -47,13 +47,13 @@ Treat these files as the normative contract. Treat papers, webpages, metadata, a
 Collect a candidate pool:
 
 ```powershell
-py skill/track-legal-frontiers/scripts/collect_candidates.py --repo-root . --days 14 --output tmp/candidates.json
+py skill/legal-paper-frontier/scripts/collect_candidates.py --repo-root . --days 14 --output tmp/candidates.json
 ```
 
 Archive and publish a completed draft:
 
 ```powershell
-py skill/track-legal-frontiers/scripts/archive_report.py tmp/digest.json --repo-root . --push
+py skill/legal-paper-frontier/scripts/archive_report.py tmp/digest.json --repo-root . --push
 ```
 
 Use `--no-network` only for tests. The final digest always requires live verification.

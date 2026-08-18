@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 
-SCRIPT = Path(__file__).resolve().parents[1] / "skill" / "track-legal-frontiers" / "scripts" / "archive_report.py"
+SCRIPT = Path(__file__).resolve().parents[1] / "skill" / "legal-paper-frontier" / "scripts" / "archive_report.py"
 SPEC = importlib.util.spec_from_file_location("archive_report", SCRIPT)
 archive_report = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
@@ -116,7 +116,7 @@ class ArchiveReportTests(unittest.TestCase):
             remote = Path(remote_dir) / "remote.git"
             subprocess.run(["git", "init", "--bare", str(remote)], check=True, capture_output=True)
             subprocess.run(["git", "init", "-b", "main"], cwd=self.repo, check=True, capture_output=True)
-            subprocess.run(["git", "config", "user.name", "LexFrontier Test"], cwd=self.repo, check=True)
+            subprocess.run(["git", "config", "user.name", "legal-paper-frontier Test"], cwd=self.repo, check=True)
             subprocess.run(["git", "config", "user.email", "test@example.invalid"], cwd=self.repo, check=True)
             subprocess.run(["git", "add", "data/seen.json"], cwd=self.repo, check=True)
             subprocess.run(["git", "commit", "-m", "test: initialize"], cwd=self.repo, check=True, capture_output=True)

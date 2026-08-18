@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate, render, archive, and optionally publish a LexFrontier digest."""
+"""Validate, render, archive, and optionally publish a legal-paper-frontier digest."""
 
 from __future__ import annotations
 

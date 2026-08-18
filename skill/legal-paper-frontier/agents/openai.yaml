@@ -1,0 +1,4 @@
+interface:
+  display_name: "Legal Paper Frontier"
+  short_description: "Curate and archive legal-frontier research digests"
+  default_prompt: "Use $legal-paper-frontier to curate and archive today's legal-frontier digest."
