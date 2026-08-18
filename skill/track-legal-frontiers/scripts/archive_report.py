@@ -328,9 +328,9 @@ def render_report(report: dict[str, Any]) -> str:
     lines = [
         f"# 法学前沿论文日报｜{report['report_date']}",
         "",
-        f"> 覆盖窗口：{report['window_start']} 至 {report['window_end']}",
-        f"> 入选：{len(papers)} 篇（宁缺毋滥）",
-        f"> 预计阅读：{'约 10 分钟' if papers else '不到 1 分钟'}",
+        f"> - 覆盖窗口：{report['window_start']} 至 {report['window_end']}",
+        f"> - 入选：{len(papers)} 篇（宁缺毋滥）",
+        f"> - 预计阅读：{'约 10 分钟' if papers else '不到 1 分钟'}",
         "",
     ]
     if report["editor_note"]:
