@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-08-18T07:32:23+00:00",
+  "entries": [
+    {
+      "keys": [
+        "doi:10.1007/s10506-026-09517-6",
+        "url:1191e375c363380ccfbf",
+        "title:2b1d45db733396cd2b5f"
+      ],
+      "title_original": "Human realignment",
+      "authors": [
+        "Christoph Engel",
+        "Yoan Hermstrüwer",
+        "Alison Kim"
+      ],
+      "recommended_on": "2026-08-18",
+      "first_report": "reports/2026/08/2026-08-18.md"
+    },
+    {
+      "keys": [
+        "doi:10.1017/err.2026.10143",
+        "url:e07f5c1f001d288c0929",
+        "title:df2f467f381bd08ce435"
+      ],
+      "title_original": "Artificial Intelligence and Family Law: The Impact of the EU AI Act Regulatory Framework and Principles on the Use of AI in Family Proceedings",
+      "authors": [
+        "Michał A. Piegzik"
+      ],
+      "recommended_on": "2026-08-18",
+      "first_report": "reports/2026/08/2026-08-18.md"
+    },
+    {
+      "keys": [
+        "doi:10.1007/s10506-026-09536-3",
+        "url:f3d665914c5482b6986b",
+        "title:2bb6121b79defe8a82f9"
+      ],
+      "title_original": "Accountability shift in human–AI collaborations",
+      "authors": [
+        "Qingye Jiang"
+      ],
+      "recommended_on": "2026-08-18",
+      "first_report": "reports/2026/08/2026-08-18.md"
+    },
+    {
+      "keys": [
+        "doi:10.1080/17579961.2026.2705118",
+        "url:7bf552bddea65a11ae19",
+        "title:cda8dcfd5b00fb5fe756"
+      ],
+      "title_original": "The EU’s digital sovereignty and quantum technologies: to what end?",
+      "authors": [
+        "Plixavra Vogiatzoglou",
+        "Joris V. J. van Hoboken"
+      ],
+      "recommended_on": "2026-08-18",
+      "first_report": "reports/2026/08/2026-08-18.md"
+    },
+    {
+      "keys": [
+        "doi:10.1007/s13347-026-01165-7",
+        "url:9d26141feb4f727549b6",
+        "title:069df5490275033688da"
+      ],
+      "title_original": "The Architecture of Moral Responsibility: Re-Structuring Moral Blame to fill in the Responsibility gap",
+      "authors": [
+        "Vipra Chopra"
+      ],
+      "recommended_on": "2026-08-18",
+      "first_report": "reports/2026/08/2026-08-18.md"
+    }
+  ]
+}

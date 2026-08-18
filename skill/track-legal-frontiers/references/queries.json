@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "queries": [
+    {"label": "AI law and regulation", "language": "en", "query": "artificial intelligence law legal regulation governance"},
+    {"label": "Generative AI and legal institutions", "language": "en", "query": "generative AI large language model courts lawyers legal services"},
+    {"label": "Algorithmic accountability", "language": "en", "query": "algorithmic accountability automated decision discrimination due process"},
+    {"label": "Data and platform governance", "language": "en", "query": "data privacy platform governance competition law digital regulation"},
+    {"label": "Computational and empirical law", "language": "en", "query": "computational law empirical legal studies machine learning"},
+    {"label": "人工智能与法治", "language": "zh", "query": "人工智能 法律 法治 规制 治理"},
+    {"label": "生成式人工智能与司法", "language": "zh", "query": "生成式人工智能 大模型 司法 法律服务"},
+    {"label": "算法与数据治理", "language": "zh", "query": "算法治理 自动化决策 数据法 平台治理"}
+  ]
+}
