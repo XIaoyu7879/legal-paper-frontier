@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import json
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -109,6 +110,30 @@ class ArchiveReportTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(archive_report.ContractError, "only allowed for the deep read"):
             archive_report.validate_report(sample_report([sample_paper(), second]))
+
+    def test_push_commits_only_archive_outputs_to_remote(self):
+        with tempfile.TemporaryDirectory() as remote_dir:
+            remote = Path(remote_dir) / "remote.git"
+            subprocess.run(["git", "init", "--bare", str(remote)], check=True, capture_output=True)
+            subprocess.run(["git", "init", "-b", "main"], cwd=self.repo, check=True, capture_output=True)
+            subprocess.run(["git", "config", "user.name", "LexFrontier Test"], cwd=self.repo, check=True)
+            subprocess.run(["git", "config", "user.email", "test@example.invalid"], cwd=self.repo, check=True)
+            subprocess.run(["git", "add", "data/seen.json"], cwd=self.repo, check=True)
+            subprocess.run(["git", "commit", "-m", "test: initialize"], cwd=self.repo, check=True, capture_output=True)
+            subprocess.run(["git", "remote", "add", "origin", str(remote)], cwd=self.repo, check=True)
+            subprocess.run(["git", "push", "-u", "origin", "main"], cwd=self.repo, check=True, capture_output=True)
+
+            result = archive_report.archive(sample_report(), self.repo, True, "origin")
+
+            self.assertTrue(result["pushed"])
+            archived = subprocess.run(
+                ["git", "--git-dir", str(remote), "show", "main:reports/2026/08/2026-08-18.md"],
+                check=True,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+            ).stdout
+            self.assertIn("Governing Frontier Models", archived)
 
 
 if __name__ == "__main__":
